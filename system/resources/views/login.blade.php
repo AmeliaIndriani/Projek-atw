@@ -59,14 +59,12 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<a class="login100-form-btn" href="{{url("home")}}">  Login </a>
+						<a class="login100-form-btn" href="{{url("beranda")}}"> Login </a>
 					</div>
-
 					<div class="text-center p-t-90">
 						<p class="txt1"> belum memiliki akun ? <a href="{{url("registrasi")}}"> buat akun</a>
 						</p>
 					</div>
-
 					<div class="text-center p-t-90">
 						<a class="txt1" href="#">
 							Forgot Password?

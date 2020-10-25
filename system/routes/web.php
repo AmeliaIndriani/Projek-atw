@@ -14,12 +14,22 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/', function () {
+Route::get('/welcom', function () {
     return view('welcome');
 });
 
 Route::get('/home', function () {
     return view('home');
+});
+Route::get('/beranda', function () {
+    return view('beranda');
+});
+
+Route::get('/Categori', function () {
+    return view('Categori');
+});
+Route::get('/produk', function () {
+    return view('produk');
 });
 
 Route::get('/produk-detail', function () {
@@ -37,3 +47,9 @@ Route::get('/login', function () {
 Route::get('/registrasi', function () {
     return view('registrasi');
 });
+
+Route::get('template', function () {
+    return view('template.base');
+});
+
+
