@@ -65,6 +65,7 @@
               <li><a href="{{url("/home")}}">Home</a></li>
               <li class="hidden-xs"><a href="{{url("/checkout")}}">Checkout</a></li>
               <li><a href="" data-toggle="modal" data-target="#login-modal">Login</a></li> 
+              <li><a href="{{url("/registrasi")}}" data-toggle="modal">Registrasi</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>

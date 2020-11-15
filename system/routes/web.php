@@ -1,6 +1,14 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\HomeController;
+use App\Http\Controllers\AuthController;
+use App\Http\Controllers\produkController;
+use App\Http\Controllers\UserController;
+use App\Http\Controllers\UserprodukController;
+use App\Http\Controllers\categoriController;
+
+
 
 /*
 |--------------------------------------------------------------------------
@@ -14,42 +22,49 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::get('/welcom', function () {
-    return view('welcome');
-});
 
-Route::get('/home', function () {
-    return view('home');
-});
-Route::get('/beranda', function () {
-    return view('beranda');
-});
+Route::get('/welcome', [HomeController::class, 'showwelcome']);
+Route::get('/home', [HomeController::class, 'showhome']);
+Route::get('/beranda', [HomeController::class, 'showberanda']);
+Route::get('/Categori', [HomeController::class, 'showCategori']);
 
-Route::get('/Categori', function () {
-    return view('Categori');
-});
-Route::get('/produk', function () {
-    return view('produk');
-});
 
-Route::get('/produk-detail', function () {
-    return view('produk-detail');
-});
+Route::get('/produk', [produkController::class, 'index']);
+Route::get('/produk/create', [produkController::class,'create']);
+Route::post('/produk', [produkController::class,'store']);
+Route::get('/produk/{produk}', [produkController::class,'show']);
+Route::get('/produk/{produk}/edit', [produkController::class,'edit']);
+Route::put('/produk/{produk}', [produkController::class,'update']);
+Route::delete('/produk/{produk}', [produkController::class,'destroy']);
 
-Route::get('/checkout', function () {
-    return view('checkout');
-});
 
-Route::get('/login', function () {
-    return view('login');
-});
+Route::get('/user', [UserController::class, 'index']);
+Route::get('/user/create', [UserController::class,'create']);
+Route::post('/user', [UserController::class,'store']);
+Route::get('/user/{user}', [UserController::class,'show']);
+Route::get('/user/{user}/edit', [UserController::class,'edit']);
+Route::put('/user/{user}', [UserController::class,'update']);
+Route::delete('/user/{user}', [UserController::class,'destroy']);
 
-Route::get('/registrasi', function () {
-    return view('registrasi');
-});
+Route::get('/login', [AuthController::class, 'showlogin']);
+Route::post('/login', [AuthController::class, 'loginprocess']);
 
-Route::get('template', function () {
-    return view('template.base');
-});
+Route::get('/categori', [categoriController::class, 'index']);
+Route::get('/categori/create', [categoriController::class,'create']);
+Route::post('/categori', [categoriController::class,'store']);
+Route::get('/categori/{categori}', [categoriController::class,'show']);
+Route::get('/categori/{categori}/edit', [categoriController::class,'edit']);
+Route::put('/categori/{categori}', [CategoriController::class,'update']);
+Route::delete('/categori/{categori}', [categoriController::class,'destroy']);
+
+
+Route::get('/produkdetail', [HomeController::class, 'showprodukdetail']);
+Route::get('/login', [AuthController::class, 'showlogin']);
+Route::get('/registrasi', [AuthController::class, 'showregistrasi']);
+Route::get('/checkout', [AuthController::class, 'showcheckout']);
+
+  
+
+
 
 

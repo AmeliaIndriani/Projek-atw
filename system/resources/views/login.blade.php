@@ -36,18 +36,22 @@
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-landscape"></i>
 					</span>
-
+					
+					
 					<span class="login100-form-title p-b-34 p-t-27">
 						Log in
 					</span>
+					@include('template.utils.notif')
+					<form action="{{url('login')}}" method="post">
+						@csrf
 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="username" placeholder="email">
+						<input class="input100" type="text" name="username" placeholder="email" name="email">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
+						<input class="input100" type="password" name="pass" placeholder="Password" name="password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
@@ -70,6 +74,7 @@
 							Forgot Password?
 						</a>
 					</div>
+				</form>
 				</form>
 			</div>
 		</div>
