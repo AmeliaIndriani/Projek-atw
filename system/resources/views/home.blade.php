@@ -140,7 +140,7 @@
             <ul class="nav navbar-nav">
               <li class="active"><a href="{{url("/home")}}">Home</a></li>
               <li class="hidden-xs"><a href="{{url("/checkout")}}">Checkout</a></li>
-              <li><a href="{{url("/login")}}" data-toggle="modal">Login</a></li>
+              <li><a href="{{url("/loginadmin")}}" data-toggle="modal">Login</a></li>
               <li><a href="{{url("/registrasi")}}" data-toggle="modal">Registrasi</a></li>
             </ul>
           </div><!--/.nav-collapse -->

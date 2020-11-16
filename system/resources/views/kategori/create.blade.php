@@ -11,14 +11,17 @@
                     <div class ="col-md-12 mt-5">
                         <div class="card">
                             <div class="card-header">
-                                 Detail Data categori
+                                 Tambah Data kategori
                             </div>
                             <div class ="card-body">
-                            <h3> {{$produk->nama}}</h3>
-                            <hr>
-                            <p> 
-                                categori : {{$categori->nama}} |
-                            </p>
+                                <form action="{{url('kategori')}}" method="post">
+                                    @csrf
+                                    <div class ="form-group">
+                                        <label  for ="" class ="control-label"> nama </label>
+                                        <input type="text" class="form-control" name="nama">
+                                    </div>
+                                    <button class="btn btn-dark float-right"><i class="fa fa-save"></i>simpan</button>
+                                </form>
                         </div>
                     </div>
                 </div>

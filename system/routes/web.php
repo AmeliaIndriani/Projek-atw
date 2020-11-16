@@ -6,7 +6,9 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\produkController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\UserprodukController;
-use App\Http\Controllers\categoriController;
+use App\Http\Controllers\kategoriController;
+use App\Http\Controllers\UserkategoriController;
+
 
 
 
@@ -26,7 +28,7 @@ use App\Http\Controllers\categoriController;
 Route::get('/welcome', [HomeController::class, 'showwelcome']);
 Route::get('/home', [HomeController::class, 'showhome']);
 Route::get('/beranda', [HomeController::class, 'showberanda']);
-Route::get('/Categori', [HomeController::class, 'showCategori']);
+
 
 
 Route::get('/produk', [produkController::class, 'index']);
@@ -46,20 +48,20 @@ Route::get('/user/{user}/edit', [UserController::class,'edit']);
 Route::put('/user/{user}', [UserController::class,'update']);
 Route::delete('/user/{user}', [UserController::class,'destroy']);
 
-Route::get('/login', [AuthController::class, 'showlogin']);
-Route::post('/login', [AuthController::class, 'loginprocess']);
-
-Route::get('/categori', [categoriController::class, 'index']);
-Route::get('/categori/create', [categoriController::class,'create']);
-Route::post('/categori', [categoriController::class,'store']);
-Route::get('/categori/{categori}', [categoriController::class,'show']);
-Route::get('/categori/{categori}/edit', [categoriController::class,'edit']);
-Route::put('/categori/{categori}', [CategoriController::class,'update']);
-Route::delete('/categori/{categori}', [categoriController::class,'destroy']);
+Route::get('/loginadmin', [AuthController::class, 'showloginadmin']);
+Route::post('/loginadmin', [AuthController::class, 'loginprocess']);
 
 
-Route::get('/produkdetail', [HomeController::class, 'showprodukdetail']);
-Route::get('/login', [AuthController::class, 'showlogin']);
+Route::get('/kategori', [kategoriController::class, 'index']);
+Route::get('/kategori/create', [kategoriController::class,'create']);
+Route::post('/kategori', [kategoriController::class,'store']);
+Route::get('/kategori/{kategori}', [kategoriController::class,'show']);
+Route::get('/kategori/{kategori}/edit', [kategoriController::class,'edit']);
+Route::put('/kategori/{kategori}', [kategoriController::class,'update']);
+Route::delete('/kategori/{kategori}', [kategoriController::class,'destroy']);
+
+
+Route::get('/produk-detail', [HomeController::class, 'showprodukdetail']);
 Route::get('/registrasi', [AuthController::class, 'showregistrasi']);
 Route::get('/checkout', [AuthController::class, 'showcheckout']);
 

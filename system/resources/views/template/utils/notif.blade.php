@@ -2,7 +2,7 @@
     @if (session($status))
     <div class="alert alert-{{$status}} alert-dismissable custom-{{$status}}-box">
         <a href="#" class="close" data-dismis="alert" aria-label="close">&times;</a>
-        <strong> {{ session($status)}} </strong>
+        <strong> {{session($status)}} </strong>
     </div>
     @endif    
 @endforeach

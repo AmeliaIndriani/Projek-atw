@@ -31,7 +31,7 @@
                                     </div>
                                     <div class ="form-group">
                                         <label  for ="" class ="control-label"> Password </label>
-                                        <input type="text" class="form-control" >
+                                        <input type="password" class="form-control" >
                                     </div>
                                     <button class="btn btn-dark float-right"><i class="fa fa-save"></i>simpan</button>
                                 </form>

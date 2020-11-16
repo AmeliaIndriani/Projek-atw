@@ -16,7 +16,7 @@
                     <li class="nav-item ">
                         <a class="nav-link " aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1" href="{{url('produk')}}">Produk<span class="badge badge-success">6</span></a>
                     </li>
-                    <li class="nav-item "> <a class="nav-link "  aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1" href="{{url('Categori')}}">Categori<span class="badge badge-success">6</span></a>
+                    <li class="nav-item "> <a class="nav-link "  aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1" href="{{url('kategori')}}">kategori<span class="badge badge-success">6</span></a>
                     </li>
                     <li class="nav-item "> <a class="nav-link "  aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1" href="{{url('user')}}">User<span class="badge badge-success">6</span></a>
                     </li>

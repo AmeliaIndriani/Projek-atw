@@ -14,8 +14,8 @@ class HomeController extends Controller {
     function showberanda(){
         return view('beranda');
     }
-    function showcategori(){
-        return view('categori');
+    function showkategori(){
+        return view('kategori');
     }
     function showproduk(){
         return view('produk');

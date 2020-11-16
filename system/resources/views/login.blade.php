@@ -32,26 +32,19 @@
 	<div class="limiter">
 		<div class="container-login100" style="background-image: url('assetss/images/bg-01.jpg');">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				@include('template.utils.notif') 
+				<form action="{{url('login')}}" method="post">
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-landscape"></i>
-					</span>
-					
-					
-					<span class="login100-form-title p-b-34 p-t-27">
-						Log in
-					</span>
-					@include('template.utils.notif')
-					<form action="{{url('login')}}" method="post">
-						@csrf
-
+					</span> 
+					@csrf 
 					<div class="wrap-input100 validate-input" data-validate = "Enter username">
 						<input class="input100" type="text" name="username" placeholder="email" name="email">
 						<span class="focus-input100" data-placeholder="&#xf207;"></span>
 					</div>
 
 					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password" name="password">
+						<input class="input100" type="password" name="password" placeholder="Password" name="password">
 						<span class="focus-input100" data-placeholder="&#xf191;"></span>
 					</div>
 
@@ -63,8 +56,8 @@
 					</div>
 
 					<div class="container-login100-form-btn">
-						<a class="login100-form-btn" href="{{url("beranda")}}"> Login </a>
-					</div>
+					<a class="login100-form-btn" href="{{'beranda'}}"> Login </a>
+					</div> 
 					<div class="text-center p-t-90">
 						<p class="txt1"> belum memiliki akun ? <a href="{{url("registrasi")}}"> buat akun</a>
 						</p>
@@ -74,7 +67,6 @@
 							Forgot Password?
 						</a>
 					</div>
-				</form>
 				</form>
 			</div>
 		</div>
