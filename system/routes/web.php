@@ -26,44 +26,44 @@ use App\Http\Controllers\UserkategoriController;
 
 
 Route::get('/welcome', [HomeController::class, 'showwelcome']);
-Route::get('/home', [HomeController::class, 'showhome']);
 Route::get('/beranda', [HomeController::class, 'showberanda']);
 
 
 
-Route::get('/produk', [produkController::class, 'index']);
-Route::get('/produk/create', [produkController::class,'create']);
-Route::post('/produk', [produkController::class,'store']);
-Route::get('/produk/{produk}', [produkController::class,'show']);
-Route::get('/produk/{produk}/edit', [produkController::class,'edit']);
-Route::put('/produk/{produk}', [produkController::class,'update']);
-Route::delete('/produk/{produk}', [produkController::class,'destroy']);
 
 
-Route::get('/user', [UserController::class, 'index']);
-Route::get('/user/create', [UserController::class,'create']);
-Route::post('/user', [UserController::class,'store']);
-Route::get('/user/{user}', [UserController::class,'show']);
-Route::get('/user/{user}/edit', [UserController::class,'edit']);
-Route::put('/user/{user}', [UserController::class,'update']);
-Route::delete('/user/{user}', [UserController::class,'destroy']);
-
+// khusus user
+Route::get('home', [HomeController::class, 'showhome']);
+Route::get('produkDetail/{produkDetail}', [HomeController::class, 'showprodukdetail']);
+Route::get('/checkout', [HomeController::class, 'checkout']);
+// Login dan register dan logout
 Route::get('/loginadmin', [AuthController::class, 'showloginadmin']);
 Route::post('/loginadmin', [AuthController::class, 'loginprocess']);
+Route::get('logout', [AuthController::class, 'logout']);
+Route::get('registrasi', [AuthController::class, 'showregistrasi']);
+Route::post('registrasi', [AuthController::class, 'storeRegister']);
 
 
-Route::get('/kategori', [kategoriController::class, 'index']);
-Route::get('/kategori/create', [kategoriController::class,'create']);
-Route::post('/kategori', [kategoriController::class,'store']);
-Route::get('/kategori/{kategori}', [kategoriController::class,'show']);
-Route::get('/kategori/{kategori}/edit', [kategoriController::class,'edit']);
-Route::put('/kategori/{kategori}', [kategoriController::class,'update']);
-Route::delete('/kategori/{kategori}', [kategoriController::class,'destroy']);
 
 
-Route::get('/produk-detail', [HomeController::class, 'showprodukdetail']);
-Route::get('/registrasi', [AuthController::class, 'showregistrasi']);
-Route::get('/checkout', [AuthController::class, 'showcheckout']);
+
+Route::resource('produk',produkController::class);
+Route::resource('kategori',kategoriController::class);
+Route::resource('user',UserController::class);
+
+// khusus login dan kawan2
+// Route::get('login', [AuthController::class, 'showLogin'])->name('login');
+// Route::post('login', [AuthController::class, 'loginProcess']);
+
+// Route::get('register', [AuthController::class, 'showRegister']);
+// Route::post('register', [AuthController::class, 'storeRegister']);
+
+
+
+
+
+
+
 
   
 

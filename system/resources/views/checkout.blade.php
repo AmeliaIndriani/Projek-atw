@@ -4,10 +4,11 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">    
-    <title>Daily Shop | Checkout Page</title>
+    <title>Daily Shop | Home</title>
     
     <!-- Font awesome -->
     <link href="assets/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{url('public')}}/fontawesome/css./all.min.css">
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">   
     <!-- SmartMenus jQuery Bootstrap Addon CSS -->
@@ -20,6 +21,7 @@
     <link rel="stylesheet" type="text/css" href="assets/css/nouislider.css">
     <!-- Theme color -->
     <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
+    <!-- <link id="switcher" href="css/theme-color/bridge-theme.css" rel="stylesheet"> -->
     <!-- Top Slider CSS -->
     <link href="assets/css/sequence-theme.modern-slide-in.css" rel="stylesheet" media="all">
 
@@ -40,84 +42,68 @@
   
 
   </head>
-  <body>        
- <!-- SCROLL TOP BUTTON -->
+  <body>       
+  <!-- SCROLL TOP BUTTON -->
     <a class="scrollToTop" href="#"><i class="fa fa-chevron-up"></i></a>
-  <!-- END SCROLL TOP BUTTON --> 
-  <!-- Start header section -->
-  <header id="aa-header">
+  <!-- END SCROLL TOP BUTTON -->
 
-    <!-- start header bottom  -->
-    <div class="aa-header-bottom">
-      <div class="container">
-        <div class="row">
-          <div class="col-md-12">
-            <div class="aa-header-bottom-area">
-              <!-- logo  -->
-              <div class="aa-logo">
-                <!-- Text based logo -->
-                <a href="index.html">
-                  <span class="fa fa-shopping-cart"></span>
-                  <p>daily<strong>Shop</strong> <span>Your Shopping Partner</span></p>
-                </a>
-                <!-- img based logo -->
-                <!-- <a href="index.html"><img src="img/logo.jpg" alt="logo img"></a> -->
-              </div>
-              <!-- / logo  -->
-               <!-- cart box -->
-              <div class="aa-cartbox">
-                <a class="aa-cart-link" href="#">
-                  <span class="fa fa-shopping-basket"></span>
-                  <span class="aa-cart-title">SHOPPING CART</span>
-                  <span class="aa-cart-notify">2</span>
-                </a>
-                <div class="aa-cartbox-summary">
-                  <ul>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src="assets/img/man/baju-distro.png" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Baju Distro</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src="assets/img/man/baju-distro.png" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Product Name</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>                    
-                    <li>
-                      <span class="aa-cartbox-total-title">
-                        Total
-                      </span>
-                      <span class="aa-cartbox-total-price">
-                        $500
-                      </span>
-                    </li>
-                  </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href="#">Checkout</a>
+  
+    <!-- Start header section -->
+    <header id="aa-header">
+
+      <!-- start header bottom  -->
+      <div class="aa-header-bottom">
+        <div class="container">
+          <div class="row">
+            <div class="col-md-12">
+              <div class="aa-header-bottom-area">
+                <!-- logo  -->
+                <div class="aa-logo">
+                  <!-- Text based logo -->
+                  <a href="index.html">
+                    <span class="fa fa-shopping-cart"></span>
+                    <p>daily<strong>Shop</strong> <span>Your Shopping Partner</span></p>
+                  </a>
+                  <!-- img based logo -->
+                  <!-- <a href="index.html"><img src="img/logo.jpg" alt="logo img"></a> -->
                 </div>
+                <!-- / logo  -->
+                 <!-- cart box -->
+                <div class="aa-cartbox">
+                  <a class="aa-cart-link" href="#">
+                    <i class="fab fa-buromobelexperte" style="font-size: 40px"></i>
+                    <span class="aa-cart-title">KATEGORI</span>
+                    {{-- <span class="aa-cart-notify">2</span> --}}
+                  </a>
+                  <div class="aa-cartbox-summary">
+                    <ul>
+                      @foreach ($list_kategori as $kategori)
+                      <li>
+                        <div class="aa-cartbox-info">
+                          <h4><a href="product-detail.html">{{$kategori->nama}}</a></h4>
+                        </div>
+                      </li>
+                      @endforeach
+                    </ul>
+                  </div>
+                </div>
+                <!-- / cart box -->
+                <!-- search box -->
+                <div class="aa-search-box">
+                  <form action="">
+                    <input type="text" name="" id="" placeholder="Search here ex. 'man' ">
+                    <button type="submit"><span class="fa fa-search"></span></button>
+                  </form>
+                </div>
+                <!-- / search box -->             
               </div>
-              <!-- / cart box -->
-              <!-- search box -->
-              <div class="aa-search-box">
-                <form action="">
-                  <input type="text" name="" id="" placeholder="Search here ex. 'man' ">
-                  <button type="submit"><span class="fa fa-search"></span></button>
-                </form>
-              </div>
-              <!-- / search box -->             
             </div>
           </div>
         </div>
       </div>
-    </div>
-    <!-- / header bottom  -->
-  </header>
-  <!-- / header section -->
+      <!-- / header bottom  -->
+    </header>
+    <!-- / header section -->
   <!-- menu -->
   <section id="menu">
     <div class="container">
@@ -135,10 +121,11 @@
           <div class="navbar-collapse collapse">
             <!-- Left nav -->
             <ul class="nav navbar-nav">
-              <li><a href="{{url("/home")}}">Home</a></li>  
-              <li class="active"><a href="{{url("/checkout")}}">checkout</a></li> 
-              <li><a href="{{url("/login")}}">Login</a></li> 
-              <li><a href="{{url("/registrasi")}}">Registrasi</a></li> 
+              <li class=""><a href="{{url("/home")}}">Home</a></li>
+             
+              <li class="active"><a href="{{url("/checkout")}}">Checkout</a></li>
+              <li><a href="{{url("registrasi")}}" data-toggle="modal">Registrasi</a></li>
+            <li><a href="{{url('loginadmin')}}" data-toggle="modal">Login</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -452,26 +439,26 @@
   </div>
 
 
-    <!-- jQuery library -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="js/bootstrap.js"></script>  
-    <!-- SmartMenus jQuery plugin -->
-    <script type="text/javascript" src="js/jquery.smartmenus.js"></script>
-    <!-- SmartMenus jQuery Bootstrap Addon -->
-    <script type="text/javascript" src="js/jquery.smartmenus.bootstrap.js"></script>  
-    <!-- To Slider JS -->
-    <script src="js/sequence.js"></script>
-    <script src="js/sequence-theme.modern-slide-in.js"></script>  
-    <!-- Product view slider -->
-    <script type="text/javascript" src="js/jquery.simpleGallery.js"></script>
-    <script type="text/javascript" src="js/jquery.simpleLens.js"></script>
-    <!-- slick slider -->
-    <script type="text/javascript" src="js/slick.js"></script>
-    <!-- Price picker slider -->
-    <script type="text/javascript" src="js/nouislider.js"></script>
-    <!-- Custom js -->
-    <script src="js/custom.js"></script> 
-    
+  <!-- jQuery library -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Include all compiled plugins (below), or include individual files as needed -->
+  <script src="assets/js/bootstrap.js"></script>  
+  <!-- SmartMenus jQuery plugin -->
+  <script type="text/javascript" src="assets/js/jquery.smartmenus.js"></script>
+  <!-- SmartMenus jQuery Bootstrap Addon -->
+  <script type="text/javascript" src="assets/js/jquery.smartmenus.bootstrap.js"></script>  
+  <!-- To Slider JS -->
+  <script src="assets/js/sequence.js"></script>
+  <script src="assets/js/sequence-theme.modern-slide-in.js"></script>  
+  <!-- Product view slider -->
+  <script type="text/javascript" src="assets/js/jquery.simpleGallery.js"></script>
+  <script type="text/javascript" src="assets/js/jquery.simpleLens.js"></script>
+  <!-- slick slider -->
+  <script type="text/javascript" src="assets/js/slick.js"></script>
+  <!-- Price picker slider -->
+  <script type="text/javascript" src="assets/js/nouislider.js"></script>
+  <!-- Custom js -->
+  <script src="assets/js/custom.js"></script> 
+
   </body>
 </html>

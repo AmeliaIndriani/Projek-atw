@@ -33,7 +33,7 @@
 		<div class="container-login100" style="background-image: url('assetss/images/bg-01.jpg');">
 			<div class="wrap-login100">
 				@include('template.utils.notif') 
-				<form action="{{url('login')}}" method="post">
+				<form action="{{url('loginadmin')}}" method="post">
 					<span class="login100-form-logo">
 						<i class="zmdi zmdi-landscape"></i>
 					</span> 

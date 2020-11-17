@@ -34,32 +34,36 @@
     <!-- ============================================================== -->
     <div class="splash-container">
         <div class="card ">
-            <div class="card-header text-center"></a><span class="splash-description">Please enter your user information.</span></div>
+            <div class="card-header text-center"></a><span class="splash-description">Login</span></div>
             <div class="card-body">
                 @include('template.utils.notif')
                 <form action="{{url('loginadmin')}}" method="post">
                     @csrf
                     <div class="form-group">
-                        <input class="form-control form-control-lg" id="Email" type="Email" placeholder="Email" autocomplete="on" name="Email">
+                        <input class="form-control form-control-lg" type="text" placeholder="Email" title="Please enter you email" required="" value="" name="email" id="email" class="form-control">
                     </div>
                     <div class="form-group">
-                        <input class="form-control form-control-lg" id="Password" type="Password" placeholder="Password" name="Password">
+                        <input class="form-control form-control-lg" type="password" title="Please enter your password" placeholder="**" required="" value="" name="password" id="password" class="form-control">
                     </div>
                     <div class="form-group">
                         <label class="custom-control custom-checkbox">
-                            <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Remember Me</span>
+                            {{-- <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Remember Me</span> --}}
                         </label>
                     </div>
                     <div class="btn btn-primary btn-lg btn-block"> 
-                    <button class="btn btn-primary btn-lg btn-block">Sigin</button>
+                    <button class="btn btn-primary btn-lg btn-block">Submit</button>
                     </div>
                 </form>
             </div>
-            <div class="card-footer bg-white p-0  ">
-                <div class="card-footer-item card-footer-item-bordered">
-                    <a href="#" class="footer-link">Create An Account</a></div>
-                <div class="card-footer-item card-footer-item-bordered">
-                    <a href="#" class="footer-link">Forgot Password</a>
+
+         
+
+
+            <div class="card-footer bg-white p-0 row ">
+                <div class="card-footer-item card-footer-item-bordered col-md-6">
+                <a href="{{url('home')}}" class="footer-link">Kembali</a></div>
+                <div class="card-footer-item card-footer-item-bordered col-md-6">
+                <a href="{{url('registrasi')}}" class="footer-link">Registrasi</a>
                 </div>
             </div>
         </div>

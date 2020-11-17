@@ -8,6 +8,7 @@
     
     <!-- Font awesome -->
     <link href="assets/css/font-awesome.css" rel="stylesheet">
+  <link rel="stylesheet" href="{{url('public')}}/fontawesome/css./all.min.css">
     <!-- Bootstrap -->
     <link href="assets/css/bootstrap.css" rel="stylesheet">   
     <!-- SmartMenus jQuery Bootstrap Addon CSS -->
@@ -70,38 +71,20 @@
                <!-- cart box -->
               <div class="aa-cartbox">
                 <a class="aa-cart-link" href="#">
-                  <span class="fa fa-shopping-basket"></span>
-                  <span class="aa-cart-title">SHOPPING CART</span>
-                  <span class="aa-cart-notify">2</span>
+                  <i class="fab fa-buromobelexperte" style="font-size: 40px"></i>
+                  <span class="aa-cart-title">KATEGORI</span>
+                  {{-- <span class="aa-cart-notify">2</span> --}}
                 </a>
                 <div class="aa-cartbox-summary">
                   <ul>
+                    @foreach ($list_kategori as $kategori)
                     <li>
-                      <a class="aa-cartbox-img" href=""><img src="img/baju-distro.jpg" alt="img"></a>
                       <div class="aa-cartbox-info">
-                        <h4><a href="product-detail.html">Product Name</a></h4>
-                        <p>1 x $250</p>
+                        <h4><a href="product-detail.html">{{$kategori->nama}}</a></h4>
                       </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
                     </li>
-                    <li>
-                      <a class="aa-cartbox-img" href="#"><img src="img/woman-small-1.jpg" alt="img"></a>
-                      <div class="aa-cartbox-info">
-                        <h4><a href="#">Product Name</a></h4>
-                        <p>1 x $250</p>
-                      </div>
-                      <a class="aa-remove-product" href="#"><span class="fa fa-times"></span></a>
-                    </li>                    
-                    <li>
-                      <span class="aa-cartbox-total-title">
-                        Total
-                      </span>
-                      <span class="aa-cartbox-total-price">
-                        $500
-                      </span>
-                    </li>
+                    @endforeach
                   </ul>
-                  <a class="aa-cartbox-checkout aa-primary-btn" href="{{url("/checkout")}}">Checkout</a>
                 </div>
               </div>
               <!-- / cart box -->
@@ -139,9 +122,10 @@
             <!-- Left nav -->
             <ul class="nav navbar-nav">
               <li class="active"><a href="{{url("/home")}}">Home</a></li>
+             
               <li class="hidden-xs"><a href="{{url("/checkout")}}">Checkout</a></li>
-              <li><a href="{{url("/loginadmin")}}" data-toggle="modal">Login</a></li>
-              <li><a href="{{url("/registrasi")}}" data-toggle="modal">Registrasi</a></li>
+              <li><a href="{{url("registrasi")}}" data-toggle="modal">Registrasi</a></li>
+            <li><a href="{{url('loginadmin')}}" data-toggle="modal">Login</a></li>
             </ul>
           </div><!--/.nav-collapse -->
         </div>
@@ -155,7 +139,7 @@
       <div class="row">
         <div class="col-md-12">
           <div class="row">
-            <div class="aa-product-area">
+            <div class="aa-product-area" >
               <div class="aa-product-inner">
                 <!-- start prduct navigation -->
                  <ul class="nav nav-tabs aa-products-tab">
@@ -167,13 +151,15 @@
                     <div class="tab-pane fade in active" id="men">
                       <ul class="aa-product-catg">
                         <!-- start single product item -->
+                        @foreach ($list_produk as $produk)
                         <li>
                           <figure>
-                            <a class="aa-product-img" href="{{url("/produk-detail")}}"><img src="img/man/baju-distro.png" alt="polo shirt img"></a>
+                            <a class="aa-product-img" href="{{url('produkDetail', $produk->id)}}"><img src="img/man/baju-distro.png" alt="polo shirt img"></a>
                             <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                               <figcaption>
-                              <h4 class="aa-product-title"><a href="{{url("/produk-detail")}}">Baju Distro</a></h4>
-                              <span class="aa-product-price">$45.50</span><span class="aa-product-price"><del>$65.50</del></span>
+                              <h4 class="aa-product-title"><a href="{{url("/produk-detail")}}">{{$produk->nama}}</a></h4>
+                              <span class="aa-product-price">{{$produk->harga}}</span><span class="aa-product-price"><del>$65.50</del></span>
+                              <p>{{$produk->stok}}</p>
                             </figcaption>
                           </figure>                        
                           <div class="aa-product-hvr-content">
@@ -185,76 +171,11 @@
                           <span class="aa-badge aa-sale" href="#">SALE!</span>
                         </li>
                         <!-- start single product item -->
-                        <li>
-                          <figure>
-                            <a class="aa-product-img" href="{{url("/produk-detail")}}"><img src="img/man/celana-panjang.png" alt="polo shirt img"></a>
-                            <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                             <figcaption>
-                              <h4 class="aa-product-title"><a href="{{url("/produk-detail")}}">Celana Panjang</a></h4>
-                              <span class="aa-product-price">$45.50</span>
-                            </figcaption>
-                          </figure>                         
-                          <div class="aa-product-hvr-content">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
-                          </div>
-                          <!-- product badge -->
-                           <span class="aa-badge aa-sold-out" href="#">Sold Out!</span>
-                        </li>
-                        <!-- start single product item -->
-                        <li>
-                          <figure>
-                            <a class="aa-product-img" href="{{url("/produk-detail")}}"><img src="img/man/celana-pendek.png" alt="polo shirt img"></a>
-                            <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                             <figcaption>
-                              <h4 class="aa-product-title"><a href="{{url("/produk-detail")}}">Celana Pendek</a></h4>
-                              <span class="aa-product-price">$45.50</span><span class="aa-product-price"><del>$65.50</del></span>
-                            </figcaption>
-                          </figure>                         
-                          <div class="aa-product-hvr-content">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
-                          </div>
-                        </li>
-                        <!-- start single product item -->
-                        <li>
-                          <figure>
-                            <a class="aa-product-img" href="{{url("/produk-detail")}}"><img src="img/man/kaos-1.png" alt="polo shirt img"></a>
-                            <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                            <figcaption>
-                              <h4 class="aa-product-title"><a href="{{url("/produk-detail")}}">Kaos</a></h4>
-                              <span class="aa-product-price">$45.50</span><span class="aa-product-price"><del>$65.50</del></span>
-                            </figcaption>
-                          </figure>                          
-                          <div class="aa-product-hvr-content">
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
-                          </div>
-                          <!-- product badge -->
-                          <span class="aa-badge aa-hot" href="#">HOT!</span>
-                        </li>
-                        <!-- start single product item -->
-                        <li>
-                          <figure>
-                            <a class="aa-product-img" href="{{url("/produk-detail")}}"><img src="img/man/kemeja.png" alt="polo shirt img"></a>
-                            <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
-                            <figcaption>
-                              <h4 class="aa-product-title"><a href="{{url("/produk-detail")}}">Kemeja</a></h4>
-                              <span class="aa-product-price">$45.50</span>
-                            </figcaption>
-                          </figure>                          
-                          <div class="aa-product-hvr-content">
-                           <a href="#" data-toggle="tooltip" data-placement="top" title="Add to Wishlist"><span class="fa fa-heart-o"></span></a>
-                            <a href="#" data-toggle="tooltip" data-placement="top" title="Compare"><span class="fa fa-exchange"></span></a>
-                            <a href="#" data-toggle2="tooltip" data-placement="top" title="Quick View" data-toggle="modal" data-target="#quick-view-modal"><span class="fa fa-search"></span></a>
-                          </div>
-                        </li>
-                    <!-- / men product category -->
-                  </div>           
+                        @endforeach
+                      </ul>
+                    </div>           
               </div>
+              
             </div>
           </div>
         </div>

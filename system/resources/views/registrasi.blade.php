@@ -1,94 +1,86 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+ 
 <head>
-	<title>Login V3</title>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-<!--===============================================================================================-->	
-	<link rel="icon" type="image/png" href="assetss/images/icons/favicon.ico"/>
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="assetss/vendor/bootstrap/css/bootstrap.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="assetss/fonts/font-awesome-4.7.0/css/font-awesome.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="assetss/fonts/iconic/css/material-design-iconic-font.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="assetss/vendor/animate/animate.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="assetss/vendor/css-hamburgers/hamburgers.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="assetss/vendor/animsition/css/animsition.min.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="assetss/vendor/select2/select2.min.css">
-<!--===============================================================================================-->	
-	<link rel="stylesheet" type="text/css" href="assetss/vendor/daterangepicker/daterangepicker.css">
-<!--===============================================================================================-->
-	<link rel="stylesheet" type="text/css" href="assetss/css/util.css">
-	<link rel="stylesheet" type="text/css" href="assetss/css/mainnnn.css">
-<!--===============================================================================================-->
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Login</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{url('public')}}/vendor/bootstrap/css/bootstrap.min.css">
+    <link href="{{url('public')}}/vendor/fonts/circular-std/style.css" rel="stylesheet">
+    <link rel="stylesheet" href="{{url('public')}}/libs/css/style.css">
+    <link rel="stylesheet" href="{{url('public')}}/vendor/fonts/fontawesome/css/fontawesome-all.css">
+    <style>
+    html,
+    body {
+        height: 100%;
+    }
+
+    body {
+        display: -ms-flexbox;
+        display: flex;
+        -ms-flex-align: center;
+        align-items: center;
+        padding-top: 40px;
+        padding-bottom: 40px;
+    }
+    </style>
 </head>
+
 <body>
-	
-	<div class="limiter">
-		<div class="container-login100" style="background-image: url('assetss/images/bg-01.jpg');">
-			<div class="wrap-login100">
-				<form class="login100-form validate-form">
-					<span class="login100-form-logo">
-						<i class="zmdi zmdi-landscape"></i>
-					</span>
-
-					<span class="login100-form-title p-b-34 p-t-27">
-						Registrasi
-					</span>
-
-					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="nama" placeholder="nama">
-						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+    <!-- ============================================================== -->
+    <!-- login page  -->
+    <!-- ============================================================== -->
+    <div class="splash-container">
+        <div class="card ">
+            <div class="card-header text-center"></a><span class="splash-description">Registrasi</span></div>
+            <div class="card-body">
+                @include('template.utils.notif')
+                <form action="{{url('registrasi')}}" method="post">
+                    @csrf
+                    <div class="form-group">
+						<input class="form-control form-control-lg" type="text" placeholder="Nama" title="Please enter you nama" required="" value="" name="nama" id="nama" class="form-control">
 					</div>
-
-					<div class="wrap-input100 validate-input" data-validate = "Enter username">
-						<input class="input100" type="text" name="email" placeholder="email">
-						<span class="focus-input100" data-placeholder="&#xf207;"></span>
+					<div class="form-group">
+                        <input class="form-control form-control-lg" type="text" placeholder="Username" title="Please enter you email" required="" value="" name="username" id="email" class="form-control">
 					</div>
+					<div class="form-group">
+                        <input class="form-control form-control-lg" type="text" placeholder="Email" title="Please enter you email" required="" value="" name="email" id="email" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <input class="form-control form-control-lg" type="password" title="Please enter your password" placeholder="**" required="" value="" name="password" id="password" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label class="custom-control custom-checkbox">
+                            {{-- <input class="custom-control-input" type="checkbox"><span class="custom-control-label">Remember Me</span> --}}
+                        </label>
+                    </div>
+                    <div class="btn btn-primary btn-lg btn-block"> 
+                    <button class="btn btn-primary btn-lg btn-block">Submit</button>
+                    </div>
+                </form>
+            </div>
 
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
-						<input class="input100" type="password" name="pass" placeholder="Password">
-						<span class="focus-input100" data-placeholder="&#xf191;"></span>
-					</div>
+         
 
-					<div class="container-login100-form-btn">
-						<a class="login100-form-btn" href="{{url("login")}}"> create acount</a>
-					</div>
 
-					<div class="text-center p-t-90">
-						<p class="txt1"> sudah memiliki akun ? <a href="{{url("login")}}"> LOGIN</a>
-
-						</p>
-					</div> 
-				</form>
-			</div>
-		</div>
-	</div>
-	
-
-	<div id="dropDownSelect1"></div>
-	
-<!--===============================================================================================-->
-	<script src="assetss/vendor/jquery/jquery-3.2.1.min.js"></script>
-<!--===============================================================================================-->
-	<script src="assetss/vendor/animsition/js/animsition.min.js"></script>
-<!--===============================================================================================-->
-	<script src="assetss/vendor/bootstrap/js/popper.js"></script>
-	<script src="assetss/vendor/bootstrap/js/bootstrap.min.js"></script>
-<!--===============================================================================================-->
-	<script src="assetss/vendor/select2/select2.min.js"></script>
-<!--===============================================================================================-->
-	<script src="assetss/vendor/daterangepicker/moment.min.js"></script>
-	<script src="assetss/vendor/daterangepicker/daterangepicker.js"></script>
-<!--===============================================================================================-->
-	<script src="assetss/vendor/countdowntime/countdowntime.js"></script>
-<!--===============================================================================================-->
-	<script src="assetss/js/main.js"></script>
-
+            <div class="card-footer bg-white p-0 row ">
+                <div class="card-footer-item card-footer-item-bordered col-md-6">
+                    <a href="#" class="footer-link">Kembali</a></div>
+                <div class="card-footer-item card-footer-item-bordered col-md-6">
+                    <a href="#" class="footer-link">Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+    <!-- ============================================================== -->
+    <!-- end login page  -->
+    <!-- ============================================================== -->
+    <!-- Optional JavaScript -->
+    <script src="{{url('public')}}/vendor/jquery/jquery-3.3.1.min.js"></script>
+    <script src="{{url('public')}}/vendor/bootstrap/js/bootstrap.bundle.js"></script>
 </body>
+ 
 </html>

@@ -17,10 +17,15 @@
                     <div class="dropdown-menu dropdown-menu-right nav-user-dropdown" aria-labelledby="navbarDropdownMenuLink2">
                         <div class="nav-user-info">
                             <h5 class="mb-0 text-white nav-user-name">
-                                 Amelia Indriani                       </h5>
+                        @if(Auth::check())
+                        {{request()->user()->nama}}
+                        @else
+                        silahkan login
+                        @endif      
+                            </h5>
                         </div>
                         <a class="dropdown-item" href="{{url("registrasi")}}"><i class="fas fa-power-off mr-2"></i>registrasi</a>
-                        <a class="dropdown-item" href="{{url("home")}}"><i class="fas fa-power-off mr-2"></i>Logout</a>
+                        <a class="dropdown-item" href="{{url('logout')}}"><i class="fas fa-power-off mr-2"></i>logout</a>
                     </div>
                 </li>
             </ul>

@@ -1,14 +1,25 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Models\produk;
+use App\Models\kategori;
+
 class HomeController extends Controller {
 
     function showwelcome(){
         return view('welcome');
     }
+    function checkout(){
+        // return view('checkout');
+
+        $dataa['list_kategori'] = kategori:: all();
+        return view('checkout',  $dataa);
+    }
 
     function showhome(){
-        return view('home');
+        $dataa['list_kategori'] = kategori:: all();
+        $data ['list_produk'] = produk:: all();
+        return view('home', $data, $dataa);
     }
      
     function showberanda(){
@@ -20,8 +31,12 @@ class HomeController extends Controller {
     function showproduk(){
         return view('produk');
     }
-    function showprodukdetail(){
-        return view('produk-detail');
+    // jjjj
+ 
+    function  showprodukdetail(produk $produkDetail){
+        $data ['produk'] = $produkDetail;
+        return view ('produk-detail', $data);
+    
     }
 
 

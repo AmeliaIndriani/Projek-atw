@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use Auth;
+use App\Models\User;
 
 class AuthController extends Controller
 {
@@ -13,16 +14,27 @@ class AuthController extends Controller
         if (Auth::attempt(['email'=> request('email'),'password' => request('password')])){
             return redirect('beranda')->with ('success','login berhasil');
         }else{
-            return back()->with('danger','login gagal, silahkan cek Email dan password');
+            return back()->with('danger','login gagal, silahkan cek email dan password');
         }
+
     }
-    function showlogout(){
+    function logout(){
         Auth::logout();
-        return redirect('beranda');
+        return redirect('home');
     }
 
     function showregistrasi(){
         return view('registrasi');
+    }
+    function storeRegister(){
+        $user= new user;
+        $user->nama= request('nama');
+        $user->username= request('username');
+        $user->email= request('email');
+        $user->password= bcrypt(request('password'));
+        $user->save();
+
+        return redirect('loginadmin')->with('succes','Anda sudah terdaftar, Silahkan Login!');
     }
 
     function showcheckout(){
