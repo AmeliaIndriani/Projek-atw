@@ -33,9 +33,9 @@
                                         <label  for ="" class ="control-label"> Password </label>
                                         <input type="password" class="form-control" >
                                     </div>
-                                    <div class ="form-group">
-                                        <label  for ="" class ="control-label"> No hp</label>
-                                        <input type="no_hp" class="form-control" namae="no_handphone">
+                                    <div class="form-group">
+                                        <label for="" class="control-label">No Hp</label>
+                                        <input type="text" class="form-control" name="no_hp" >
                                     </div>
                                     <button class="btn btn-dark float-right"><i class="fa fa-save"></i>simpan</button>
                                 </form>

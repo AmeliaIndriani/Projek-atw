@@ -1,7 +1,11 @@
 <?php
 
 namespace App\Models;
- class userdetail extends Model {
-     protected $table = 'user_detail';
 
- }?>
+use Illuminate\Database\Eloquent\Model;
+
+class UserDetail extends Model {
+    
+    protected $table = 'user_detail';
+    
+}

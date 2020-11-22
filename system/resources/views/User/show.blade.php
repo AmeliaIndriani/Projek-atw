@@ -14,14 +14,18 @@
                             <div class="card-header">
                                  Detail Data User
                             </div>
-                            <div class ="card-body">
-                            <h3> {{$user->nama}}</h3>
-                            <hr>
-                            <p> 
-                                {{"@".$user->username}} |
-                                email: {{$user->email}} |
-                            </p>
-                        </div>
+                            <div class="card-body">
+                                <h3>{{$user->nama}}</h3>
+                                <hr>
+                                <p>
+                                    {{ "@".$user->username }} |
+                                    email : {{$user->email}} 
+                                </p> 
+                            </
+                            <p>
+                                No Handphone : {{$user->detail->no_handphone}} 
+                            </p> 
+                            </div>
                     </div>
                 </div>
             </div>

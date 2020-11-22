@@ -12,4 +12,11 @@ class User extends Authenticatable
     protected $table= 'user';
     use HasFactory, Notifiable;
 
+    function detail(){
+        return $this->hasOne(UserDetail::class, 'id_user');
+    }
+
+    function produk(){
+        return $this->hasMany(produk::class, 'id_user');
+    }
 }
