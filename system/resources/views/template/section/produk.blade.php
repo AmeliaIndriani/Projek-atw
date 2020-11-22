@@ -10,7 +10,7 @@
                 {{-- <div class="product-thumbnail"> --}}
                     {{-- <div class="product-img-head"> --}}
                         <div class="product-img">
-                            <img src="assets/imag/man/celana-panjang.png" alt="" class="img-fluid"></div>
+                            <img src="{{url('public')}}/assets/imag/man/celana-panjang.png" alt="" class="img-fluid"></div>
                         <div class="ribbons"></div>
                         <div class="ribbons-text">New</div>
                         <div class=""><a href="" class="product-wishlist-btn"><i class="fas fa-heart"></i></a></div>

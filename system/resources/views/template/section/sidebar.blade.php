@@ -11,14 +11,14 @@
                         Menu
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link"  aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1" href="{{url('beranda')}}"></i>Beranda<span class="badge badge-success">6</span></a>
+                        <a class="nav-link"  aria-expanded="false"  href="{{url('beranda')}}"><i class="fas fa-home" style="font-size : 30px"></i>Beranda<span class="badge badge-success">6</span></a>
                     </li>
                     <li class="nav-item ">
-                        <a class="nav-link " aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1" href="{{url('produk')}}">Produk<span class="badge badge-success">6</span></a>
+                        <a class="nav-link " aria-expanded="false" href="{{url('produk')}}"> <i class="fab fa-product-hunt" style="font-size: 30px"></i>Produk<span class="badge badge-success">6</span></a>
                     </li>
-                    <li class="nav-item "> <a class="nav-link "  aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1" href="{{url('kategori')}}">kategori<span class="badge badge-success">6</span></a>
+                    <li class="nav-item "> <a class="nav-link "   href="{{url('kategori')}}"> <i class="fab fa-buromobelexperte" style="font-size: 30px"></i>Kategori<span class="badge badge-success">6</span></a>
                     </li>
-                    <li class="nav-item "> <a class="nav-link "  aria-expanded="false" data-target="#submenu-1" aria-controls="submenu-1" href="{{url('user')}}">User<span class="badge badge-success">6</span></a>
+                    <li class="nav-item "> <a class="nav-link "   href="{{url('user')}}"> <i class="fas fa-user" style="font-size: 30px"></i>User<span class="badge badge-success">6</span></a>
                     </li>
                             </ul>
                         </div>

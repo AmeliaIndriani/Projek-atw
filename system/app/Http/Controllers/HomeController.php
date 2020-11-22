@@ -19,7 +19,10 @@ class HomeController extends Controller {
     function showhome(){
         $dataa['list_kategori'] = kategori:: all();
         $data ['list_produk'] = produk:: all();
-        return view('home', $data, $dataa);
+        $nama = request('nama');
+        $dataaa ['list_produk'] = produk:: where('nama','like', "%$nama%")->get();
+
+        return view('home', $data, $dataa, $dataaa);
     }
      
     function showberanda(){
@@ -36,8 +39,12 @@ class HomeController extends Controller {
     function  showprodukdetail(produk $produkDetail){
         $data ['produk'] = $produkDetail;
         return view ('produk-detail', $data);
+
+
     
     }
+    
+    
 
 
 

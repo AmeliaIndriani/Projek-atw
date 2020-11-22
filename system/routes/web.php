@@ -5,9 +5,8 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\produkController;
 use App\Http\Controllers\UserController;
-use App\Http\Controllers\UserprodukController;
 use App\Http\Controllers\kategoriController;
-use App\Http\Controllers\UserkategoriController;
+
 
 
 
@@ -36,12 +35,16 @@ Route::get('/beranda', [HomeController::class, 'showberanda']);
 Route::get('home', [HomeController::class, 'showhome']);
 Route::get('produkDetail/{produkDetail}', [HomeController::class, 'showprodukdetail']);
 Route::get('/checkout', [HomeController::class, 'checkout']);
+
 // Login dan register dan logout
 Route::get('/loginadmin', [AuthController::class, 'showloginadmin']);
 Route::post('/loginadmin', [AuthController::class, 'loginprocess']);
 Route::get('logout', [AuthController::class, 'logout']);
 Route::get('registrasi', [AuthController::class, 'showregistrasi']);
-Route::post('registrasi', [AuthController::class, 'storeRegister']);
+Route::post('registrasi', [AuthController::class, 'storeregistrasi']);
+Route::post ('produk/filter',[produkController::class,'filter']);
+Route::post ('kategori/filter',[kategoriController::class,'filter']);
+
 
 
 

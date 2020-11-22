@@ -7,26 +7,26 @@
     <title>Daily Shop | Home</title>
     
     <!-- Font awesome -->
-    <link href="assets/css/font-awesome.css" rel="stylesheet">
+    <link href="{{url('public')}}/assets/css/font-awesome.css" rel="stylesheet">
   <link rel="stylesheet" href="{{url('public')}}/fontawesome/css./all.min.css">
     <!-- Bootstrap -->
-    <link href="assets/css/bootstrap.css" rel="stylesheet">   
+    <link href="{{url('public')}}/assets/css/bootstrap.css" rel="stylesheet">   
     <!-- SmartMenus jQuery Bootstrap Addon CSS -->
-    <link href="assets/css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
+    <link href="{{url('public')}}/assets/css/jquery.smartmenus.bootstrap.css" rel="stylesheet">
     <!-- Product view slider -->
-    <link rel="stylesheet" type="text/css" href="assets/css/jquery.simpleLens.css">    
+    <link rel="stylesheet" type="text/css" href="{{url('public')}}/assets/css/jquery.simpleLens.css">    
     <!-- slick slider -->
-    <link rel="stylesheet" type="text/css" href="assets/css/slick.css">
+    <link rel="stylesheet" type="text/css" href="{{url('public')}}/assets/css/slick.css">
     <!-- price picker slider -->
-    <link rel="stylesheet" type="text/css" href="assets/css/nouislider.css">
+    <link rel="stylesheet" type="text/css" href="{{url('public')}}/assets/css/nouislider.css">
     <!-- Theme color -->
-    <link id="switcher" href="assets/css/theme-color/default-theme.css" rel="stylesheet">
+    <link id="switcher" href="{{url('public')}}/assets/css/theme-color/default-theme.css" rel="stylesheet">
     <!-- <link id="switcher" href="css/theme-color/bridge-theme.css" rel="stylesheet"> -->
     <!-- Top Slider CSS -->
-    <link href="assets/css/sequence-theme.modern-slide-in.css" rel="stylesheet" media="all">
+    <link href="{{url('public')}}/assets/css/sequence-theme.modern-slide-in.css" rel="stylesheet" media="all">
 
     <!-- Main style sheet -->
-    <link href="assets/css/style.css" rel="stylesheet">    
+    <link href="{{url('public')}}/assets/css/style.css" rel="stylesheet">    
 
     <!-- Google Font -->
     <link href='https://fonts.googleapis.com/css?family=Lato' rel='stylesheet' type='text/css'>
@@ -80,7 +80,7 @@
                     @foreach ($list_kategori as $kategori)
                     <li>
                       <div class="aa-cartbox-info">
-                        <h4><a href="product-detail.html">{{$kategori->nama}}</a></h4>
+                        <h4><a href="">{{$kategori->nama}}</a></h4>
                       </div>
                     </li>
                     @endforeach
@@ -134,6 +134,26 @@
   </section>
   <!-- / menu -->
   <!-- Products section -->
+  <div class= "container">
+    <div class ="col-md-12 mt-5">
+      <div class="card">
+       <div class="card-header">
+      
+        </div>
+    <div class="card-body">
+        <form action="{{url('')}} " method="post">
+            @csrf
+            <div class="form-group">
+                <label for="" class="control-label">Nama</label>
+                <input type="text" class="form-control" name="nama" value="{{$nama?? ""}}">
+            </div>
+                    </div>
+                </div>
+            </div>
+            <button class="btn btn-dark float-right"><i class="fa fa-search"></i>Filter</button>
+        </form>
+    </div>
+
   <section id="aa-product">
     <div class="container">
       <div class="row">
@@ -143,7 +163,7 @@
               <div class="aa-product-inner">
                 <!-- start prduct navigation -->
                  <ul class="nav nav-tabs aa-products-tab">
-                    <li class="active"><a href="#men" data-toggle="tab">Men</a></li>
+                    <li class="active"><a href="#men" data-toggle="tab"> Produk </a></li>
                   </ul>
                   <!-- Tab panes -->
                   <div class="tab-content">
@@ -157,7 +177,7 @@
                             <a class="aa-product-img" href="{{url('produkDetail', $produk->id)}}"><img src="img/man/baju-distro.png" alt="polo shirt img"></a>
                             <a class="aa-add-card-btn"href="#"><span class="fa fa-shopping-cart"></span>Add To Cart</a>
                               <figcaption>
-                              <h4 class="aa-product-title"><a href="{{url("/produk-detail")}}">{{$produk->nama}}</a></h4>
+                              <h4 class="aa-product-title"><a href="{{url("/produkDetail")}}">{{$produk->nama}}</a></h4>
                               <span class="aa-product-price">{{$produk->harga}}</span><span class="aa-product-price"><del>$65.50</del></span>
                               <p>{{$produk->stok}}</p>
                             </figcaption>
@@ -189,21 +209,21 @@
   <!-- Include all compiled plugins (below), or include individual files as needed -->
   <script src="assets/js/bootstrap.js"></script>  
   <!-- SmartMenus jQuery plugin -->
-  <script type="text/javascript" src="assets/js/jquery.smartmenus.js"></script>
+  <script type="text/javascript" src="{{url('public')}}/assets/js/jquery.smartmenus.js"></script>
   <!-- SmartMenus jQuery Bootstrap Addon -->
-  <script type="text/javascript" src="assets/js/jquery.smartmenus.bootstrap.js"></script>  
+  <script type="text/javascript" src="{{url('public')}}/assets/js/jquery.smartmenus.bootstrap.js"></script>  
   <!-- To Slider JS -->
-  <script src="assets/js/sequence.js"></script>
-  <script src="assets/js/sequence-theme.modern-slide-in.js"></script>  
+  <script src="{{url('public')}}/assets/js/sequence.js"></script>
+  <script src="{{url('public')}}/assets/js/sequence-theme.modern-slide-in.js"></script>  
   <!-- Product view slider -->
-  <script type="text/javascript" src="assets/js/jquery.simpleGallery.js"></script>
-  <script type="text/javascript" src="assets/js/jquery.simpleLens.js"></script>
+  <script type="text/javascript" src="{{url('public')}}/assets/js/jquery.simpleGallery.js"></script>
+  <script type="text/javascript" src="{{url('public')}}/assets/js/jquery.simpleLens.js"></script>
   <!-- slick slider -->
-  <script type="text/javascript" src="assets/js/slick.js"></script>
+  <script type="text/javascript" src="{{url('public')}}/assets/js/slick.js"></script>
   <!-- Price picker slider -->
-  <script type="text/javascript" src="assets/js/nouislider.js"></script>
+  <script type="text/javascript" src="{{url('public')}}/assets/js/nouislider.js"></script>
   <!-- Custom js -->
-  <script src="assets/js/custom.js"></script> 
+  <script src="{{url('public')}}/assets/js/custom.js"></script> 
 
   </body>
 </html>

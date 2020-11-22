@@ -26,7 +26,7 @@ class AuthController extends Controller
     function showregistrasi(){
         return view('registrasi');
     }
-    function storeRegister(){
+    function storeregistrasi(){
         $user= new user;
         $user->nama= request('nama');
         $user->username= request('username');

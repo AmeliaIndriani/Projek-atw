@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\userdetail;
 
 
 
@@ -22,6 +23,7 @@ class UserController extends Controller {
         $user->email= request('email');
         $user->password= bcrypt(request('password'));
         $user->save();
+       
 
         return redirect('user')->with('succes','Data berhasil ditambahkan');
 

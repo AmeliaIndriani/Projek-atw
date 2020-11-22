@@ -44,9 +44,16 @@ class kategoriController extends Controller {
         return redirect('kategori')->with('danger','Data berhasil dihapus');
 
     }
+    function filter (kategori $kategori){
+
+        // $data ['list_kategori'] = kategori:: all();
+        $nama = request('nama');
+        $data ['list_kategori'] = kategori:: where('nama','like', "%$nama%")->get();
+        $data ['nama'] = $nama;
+        return view('kategori.index', $data);
 
 
-
+    }
 
 }
 
